@@ -1,15 +1,16 @@
 <template>
   <el-menu
     class="nav-menu"
-    default-active="/"
+    :default-active="$route.path"
     background-color="#002033"
     text-color="#fff"
     active-text-color="#ffd04b"
     router
+    :collapse="isCollapse"
   >
-   <el-menu-item>
-     <img src="../../../assets/logo_admin.png" alt="">
-   </el-menu-item>
+    <el-menu-item style="padding-left: 13px">
+      <img src="../../../assets/logo_admin.png" alt="" />
+    </el-menu-item>
     <el-menu-item index="/">
       <i class="el-icon-menu"></i>
       <span slot="title">首页</span>
@@ -34,7 +35,7 @@
       <i class="iconfont iconziyuan191"></i>
       <span slot="title">粉丝管理</span>
     </el-menu-item>
-    <el-menu-item index="/settings">
+    <el-menu-item index="/setting">
       <i class="el-icon-setting"></i>
       <span slot="title">个人设置</span>
     </el-menu-item>
@@ -44,19 +45,23 @@
 <script>
 export default {
   name: 'Aside',
+  props: ['is-collapse'],
+  data () {
+    return {}
+  },
   methods: {}
 }
 </script>
 
 <style scoped lang="less">
 .nav-menu {
-    .iconfont {
-        margin-right: 10px;
-        width: 24px;
-        text-align: center;
-        font-size: 16px;
-        vertical-align: middle;
-        padding-left: 5px;
-    }
+  .iconfont {
+    margin-right: 10px;
+    width: 24px;
+    text-align: center;
+    font-size: 16px;
+    vertical-align: middle;
+    padding-left: 5px;
+  }
 }
 </style>
